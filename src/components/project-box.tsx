@@ -1,21 +1,26 @@
 "use client";
 
-export function ProjectBox() {
-  return;
+export interface ProjectBoxProps {
+  data: Project;
+  featured?: boolean;
 }
 
-export type Project = {
+export function ProjectBox({ data, featured }: ProjectBoxProps) {
+  return <div>{data.title}</div>;
+}
+
+export interface Project {
   id: string;
   title: string;
   desc: string;
   thumbnailUrl: string;
   techs: Tech["id"][];
-};
+}
 
-export type Tech = {
+export interface Tech {
   id: string;
   title: string;
-};
+}
 
 export const dummyTechs: Tech[] = [
   { id: "1", title: "GCP Cloud Services" },
